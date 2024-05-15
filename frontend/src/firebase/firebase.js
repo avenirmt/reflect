@@ -2,8 +2,8 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getDatabase } from "firebase/database";
+import { getFirestore } from "firebase/firestore";
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyBV5qxiFxIIt7Ld5l8y0IfentNrL17_oGc",
   authDomain: "reflect-thesis-app.firebaseapp.com",
@@ -16,7 +16,10 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+
+// Initialize Firebase services
 const auth = getAuth(app);
 const database = getDatabase(app);
+const firestore = getFirestore(app);
 
-export { auth, database };
+export { auth, database, firestore };

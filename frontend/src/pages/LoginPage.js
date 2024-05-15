@@ -7,7 +7,6 @@ import styled from "styled-components";
 import { useFormik } from 'formik';
 import * as yup from "yup";
 
-// Validation Schema using Yup
 const validationSchema = yup.object({
   email: yup
     .string("Enter your email")
@@ -32,7 +31,7 @@ const LoginPage = () => {
     onSubmit: async (values) => {
       try {
         await signInWithEmailAndPassword(auth, values.email, values.password);
-        navigate("/dashboard"); // Adjust the route as per your app's routing
+        navigate("/dashboard");
       } catch (error) {
         setLoginError(error.message);
       }
